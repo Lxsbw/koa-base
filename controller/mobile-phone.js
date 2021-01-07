@@ -2,40 +2,53 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-01-07 17:32:26
+ * @Last Modified time: 2021-01-07 23:23:36
  */
 const BaseController = require('../handle/base-controller');
 const MobilePhoneService = require('../service/mobile-phone');
 
 class MobilePhoneController extends BaseController {
   /**
-   * id查找
-   * @route GET /api/mobile-phone/findone
-   * @group MobilePhone - Operations about mobile phone
-   * @param {string} _id.query.required - id
-   * @returns {object} 200 - mobile phone info
-   * @returns {Error} default - Unexpected error
+   * @swagger
+   * /api/mobile-phone/findone:
+   *   get:
+   *     description: id查找
+   *     tags: [MobilePhone]
+   *     parameters:
+   *     - in: "query"
+   *       name: "_id"
+   *       type: "string"
+   *       required: true
+   *       description: "id"
+   *     responses:
+   *       '200':
+   *         description: OK
    */
   async findOne(ctx, next) {
     console.log('controller : ' + JSON.stringify(ctx.query._id));
-
-    // console.log('clone : ' + JSON.stringify(_.cloneDeep(ctx.body)));
-
     ctx.body = await MobilePhoneService.findOne({ _id: ctx.query._id });
   }
 
   /**
-   * id查找
-   * @route GET /api/mobile-phone/find
-   * @group MobilePhone - Operations about mobile phone
-   * @param {string} _id.query - id
-   * @param {string} model_name.query - model_name
-   * @returns {object} 200 - mobile phone info
-   * @returns {Error} default - Unexpected error
+   * @swagger
+   * /api/mobile-phone/find:
+   *   get:
+   *     description: 查找
+   *     tags: [MobilePhone]
+   *     parameters:
+   *     - in: "query"
+   *       name: "_id"
+   *       type: "string"
+   *       description: "id"
+   *     - in: "query"
+   *       name: "model_name"
+   *       type: "string"
+   *       description: "手机型号"
+   *     responses:
+   *       '200':
+   *         description: OK
    */
   async find(ctx, next) {
-    // console.log('controller : ' + ctx.query._id + '|' + ctx.query.model_name);
-
     ctx.body = await MobilePhoneService.find({
       _id: ctx.query._id,
       model_name: ctx.query.model_name
@@ -43,47 +56,69 @@ class MobilePhoneController extends BaseController {
   }
 
   /**
-   * 添加手机
-   * @route POST /api/mobile-phone/create
-   * @group MobilePhone - Operations about mobile phone
-   * @param {MobilePhone.model} MobilePhone.body.required - 手机信息
-   * @returns {object} 200 - mobile phone _id
-   * @returns {Error} default - Unexpected error
+   * @swagger
+   * /api/mobile-phone/create: # 接口地址
+   *   post: # 请求体
+   *     description: 添加手机 # 接口信息
+   *     tags: [MobilePhone] # 模块名称
+   *     parameters: # 请求参数
+   *     - in: "body"
+   *       name: "MobilePhone"
+   *       description: "手机信息"
+   *       required: true
+   *       schema:
+   *         $ref: "#/definitions/MobilePhone"
+   *     responses:
+   *       '200':
+   *         description: OK
    */
   async create(ctx, next) {
-    console.log('controller : ' + JSON.stringify(ctx.body));
-
-    // console.log('clone : ' + JSON.stringify(_.cloneDeep(ctx.body)));
-
-    ctx.body = await MobilePhoneService.create(ctx.body);
+    console.log('controller : ' + JSON.stringify(ctx.request.body));
+    ctx.body = await MobilePhoneService.create(ctx.request.body);
   }
 
   /**
-   * 更新
-   * @route PUT /api/mobile-phone/update
-   * @group MobilePhone - Operations about mobile phone
-   * @param {MobilePhoneUpd.model} MobilePhoneUpd.body.required - 手机信息
-   * @returns {object} 200 - mobile phone
-   * @returns {Error} default - Unexpected error
+   * @swagger
+   * /api/mobile-phone/update:
+   *   put:
+   *     description: 更新手机
+   *     tags: [MobilePhone]
+   *     parameters:
+   *     - in: "body"
+   *       name: "MobilePhoneUpd"
+   *       description: "手机信息"
+   *       required: true
+   *       schema:
+   *         $ref: "#/definitions/MobilePhoneUpd"
+   *     responses:
+   *       '200':
+   *         description: OK
    */
   async update(ctx, next) {
-    console.log('controller : ' + JSON.stringify(ctx.body));
-
-    ctx.body = await MobilePhoneService.update(ctx.body);
+    console.log('controller : ' + JSON.stringify(ctx.request.body));
+    ctx.body = await MobilePhoneService.update(ctx.request.body);
   }
 
   /**
-   * 删除
-   * @route DELETE /api/mobile-phone/delete
-   * @group MobilePhone - Operations about mobile phone
-   * @param {MobilePhoneDel.model} MobilePhoneDel.body.required - 手机信息
-   * @returns {object} 200 - mobile phone info
-   * @returns {Error} default - Unexpected error
+   * @swagger
+   * /api/mobile-phone/delete:
+   *   delete:
+   *     description: 删除手机
+   *     tags: [MobilePhone]
+   *     parameters:
+   *     - in: "body"
+   *       name: "MobilePhoneDel"
+   *       description: "手机id"
+   *       required: true
+   *       schema:
+   *         $ref: "#/definitions/MobilePhoneDel"
+   *     responses:
+   *       '200':
+   *         description: OK
    */
   async delete(ctx, next) {
-    console.log('controller : ' + JSON.stringify(ctx.body));
-
-    ctx.body = await MobilePhoneService.delete(ctx.body);
+    console.log('controller : ' + JSON.stringify(ctx.request.body));
+    ctx.body = await MobilePhoneService.delete(ctx.request.body);
   }
 }
 
