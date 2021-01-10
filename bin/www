@@ -92,6 +92,6 @@ function onListening() {
   console.log('====================================');
   console.log(`✅  http://localhost:${addr.port}`);
   console.log(`✅  http://localhost:${addr.port}/api-docs/swagger`);
-  console.log(`✅  Your awesome APP launched`);
+  console.log(`✅  Your awesome APP launched ${app.env}`);
   console.log('====================================');
 }
