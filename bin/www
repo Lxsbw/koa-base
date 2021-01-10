@@ -25,6 +25,10 @@ var server = http.createServer(app.callback());
  * Listen on provided port, on all network interfaces.
  */
 
+console.log('====================================');
+console.log('🚀  Your awesome APP is launching...');
+console.log('====================================');
+
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
@@ -83,4 +87,11 @@ function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string' ? 'pipe ' + addr : 'port ' + addr.port;
   debug('Listening on ' + bind);
+  console.log('Listening on ' + bind);
+
+  console.log('====================================');
+  console.log(`✅  http://localhost:${addr.port}`);
+  console.log(`✅  http://localhost:${addr.port}/api-docs/swagger`);
+  console.log(`✅  Your awesome APP launched`);
+  console.log('====================================');
 }

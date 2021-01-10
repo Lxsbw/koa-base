@@ -10,11 +10,11 @@ const swaggerDefinition = {
     title: 'Koa2 Swagger',
     // 服务条款
     // termsOfService: 'http://swagger.io/terms/',
-    // contact: {
-    //   name: 'Contact developers',
-    //   url: 'https://mail.qq.com/',
-    //   email: '741167479@qq.com'
-    // },
+    contact: {
+      // name: 'Contact developers',
+      // url: 'https://mail.qq.com/',
+      email: 'lxsbw@outlook.com'
+    },
     // 开源协议
     license: {
       name: 'Apache 2.0',
