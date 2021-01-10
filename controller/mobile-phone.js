@@ -2,7 +2,7 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-01-10 16:27:36
+ * @Last Modified time: 2021-01-10 22:31:30
  */
 const BaseController = require('../handle/base-controller');
 const MobilePhoneService = require('../service/mobile-phone');
@@ -32,7 +32,7 @@ class MobilePhoneController extends BaseController {
 
   /**
    * @swagger
-   * /api/mobile-phone/find:
+   * /api/mobile-phone/findall:
    *   get:
    *     summary: 查找
    *     description: 查找
@@ -50,7 +50,7 @@ class MobilePhoneController extends BaseController {
    *       '200':
    *         description: OK
    */
-  async find(ctx, next) {
+  async findall(ctx, next) {
     ctx.body = await MobilePhoneService.find({
       _id: ctx.query._id,
       model_name: ctx.query.model_name

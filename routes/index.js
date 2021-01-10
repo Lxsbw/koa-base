@@ -19,7 +19,7 @@ router.get('/json', async (ctx, next) => {
 
 /* 模块 MobilePhone */
 router.get('/api/mobile-phone/findone', MobilePhone.findOne);
-router.get('/api/mobile-phone/find', MobilePhone.find);
+router.get('/api/mobile-phone/findall', MobilePhone.findall);
 router.post('/api/mobile-phone/create', MobilePhone.create);
 router.put('/api/mobile-phone/update', MobilePhone.update);
 router.delete('/api/mobile-phone/delete', MobilePhone.delete);
