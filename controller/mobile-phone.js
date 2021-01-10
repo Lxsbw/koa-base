@@ -2,7 +2,7 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-01-10 15:52:36
+ * @Last Modified time: 2021-01-10 16:27:36
  */
 const BaseController = require('../handle/base-controller');
 const MobilePhoneService = require('../service/mobile-phone');
@@ -12,8 +12,8 @@ class MobilePhoneController extends BaseController {
    * @swagger
    * /api/mobile-phone/findone:
    *   get:
-   *     description: id查找
    *     summary: id查找
+   *     description: id查找
    *     tags: [MobilePhone]
    *     parameters:
    *     - in: "query"
@@ -34,8 +34,8 @@ class MobilePhoneController extends BaseController {
    * @swagger
    * /api/mobile-phone/find:
    *   get:
-   *     description: 查找
    *     summary: 查找
+   *     description: 查找
    *     tags: [MobilePhone]
    *     parameters:
    *     - in: "query"
@@ -61,8 +61,8 @@ class MobilePhoneController extends BaseController {
    * @swagger
    * /api/mobile-phone/create: # 接口地址
    *   post: # 请求体
-   *     description: 添加手机 # 接口信息
    *     summary: 添加手机
+   *     description: 添加手机 # 接口信息
    *     tags: [MobilePhone] # 模块名称
    *     parameters: # 请求参数
    *     - in: "body"
@@ -84,8 +84,8 @@ class MobilePhoneController extends BaseController {
    * @swagger
    * /api/mobile-phone/update:
    *   put:
-   *     description: 更新手机
    *     summary: 更新手机
+   *     description: 更新手机
    *     tags: [MobilePhone]
    *     parameters:
    *     - in: "body"
@@ -107,8 +107,8 @@ class MobilePhoneController extends BaseController {
    * @swagger
    * /api/mobile-phone/delete:
    *   delete:
-   *     description: 删除手机
    *     summary: 删除手机
+   *     description: 删除手机
    *     tags: [MobilePhone]
    *     parameters:
    *     - in: "body"
