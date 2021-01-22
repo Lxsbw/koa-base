@@ -2,7 +2,7 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-01-10 22:31:30
+ * @Last Modified time: 2021-01-13 16:17:14
  */
 const BaseController = require('../handle/base-controller');
 const MobilePhoneService = require('../service/mobile-phone');
@@ -15,6 +15,7 @@ class MobilePhoneController extends BaseController {
    *     summary: id查找
    *     description: id查找
    *     tags: [MobilePhone]
+   *     deprecated: false
    *     parameters:
    *     - in: "query"
    *       name: "_id"
