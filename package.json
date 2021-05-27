@@ -9,25 +9,26 @@
     "prd": "pm2 start bin/www --name=koa-base",
     "stop": "pm2 stop koa-base && pm2 delete koa-base",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "del": "rm -rf node_modules && rm -rf yarn.lock"
+    "del": "rimraf node_modules dist yarn.lock"
   },
   "dependencies": {
-    "debug": "^4.1.1",
-    "koa": "^2.13.1",
-    "koa-bodyparser": "^4.3.0",
-    "koa-convert": "^2.0.0",
-    "koa-json": "^2.0.2",
-    "koa-logger": "^3.2.1",
-    "koa-onerror": "^4.1.0",
-    "koa-router": "^10.0.0",
-    "koa-static": "^5.0.0",
-    "koa-views": "^6.2.0",
-    "koa2-swagger-ui": "^5.0.5",
-    "mongoose": "^5.11.10",
-    "pug": "^2.0.3",
-    "swagger-jsdoc": "^6.0.1"
+    "debug": "~4.1.1",
+    "koa": "~2.13.1",
+    "koa-bodyparser": "~4.3.0",
+    "koa-convert": "~2.0.0",
+    "koa-json": "~2.0.2",
+    "koa-logger": "~3.2.1",
+    "koa-onerror": "~4.1.0",
+    "koa-router": "~10.0.0",
+    "koa-static": "~5.0.0",
+    "koa-views": "~6.2.0",
+    "koa2-swagger-ui": "~5.0.5",
+    "mongoose": "~5.11.10",
+    "pug": "~2.0.3",
+    "rimraf": "~3.0.2",
+    "swagger-jsdoc": "~6.0.1"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "~1.19.1"
   }
 }
