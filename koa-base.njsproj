@@ -5,19 +5,22 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{b98fb419-782b-419b-a8d9-bece8194c257}</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <ProjectView>ShowAllFiles</ProjectView>
+    <ProjectView>ProjectFiles</ProjectView>
     <StartupFile>app.js</StartupFile>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
     <ProjectTypeGuids>{3AF33F2E-1136-4D97-BBB7-1795711AC8B8};{349c5851-65df-11da-9384-00065b846f21};{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}</ProjectTypeGuids>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">16.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
-    <NodejsPort>3000</NodejsPort>
+    <NodejsPort>
+    </NodejsPort>
     <StartWebBrowser>True</StartWebBrowser>
     <SaveNodeJsSettingsInProjectFile>True</SaveNodeJsSettingsInProjectFile>
-    <DebuggerPort>3000</DebuggerPort>
+    <DebuggerPort>
+    </DebuggerPort>
     <NodeExePath>D:\MyProgram\nvm\v12.22.1\node.exe</NodeExePath>
-    <NodeExeArguments>D:\MyProgram\nvm\v12.22.1\</NodeExeArguments>
+    <NodeExeArguments>
+    </NodeExeArguments>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
   <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
