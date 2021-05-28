@@ -44,7 +44,6 @@
     <Content Include="views\layout.pug" />
     <Content Include="public\stylesheets\style.css" />
     <Content Include="schema\request\mobile-phone.js" />
-    <Content Include="yarn.lock" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin" />
