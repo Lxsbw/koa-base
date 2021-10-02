@@ -2,12 +2,38 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-10-02 17:30:18
+ * @Last Modified time: 2021-10-02 23:22:25
  */
 const BaseController = require('../handle/base-controller');
 const MobilePhoneService = require('../service/mobile-phone');
 
 class MobilePhoneController extends BaseController {
+  /**
+   * @swagger
+   * /:
+   *   options:
+   *     summary: Method OPTIONS
+   *     description: OPTIONS
+   *     tags: [Home]
+   *     deprecated: false
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+
+  /**
+   * @swagger
+   * /:
+   *   head:
+   *     summary: Method HEAD
+   *     description: HEAD
+   *     tags: [Home]
+   *     deprecated: false
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+
   /**
    * @swagger
    * /api/mobile-phone/findone/{_id}:
