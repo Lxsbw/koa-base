@@ -2,7 +2,7 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-10-02 23:22:25
+ * @Last Modified time: 2021-10-03 00:43:10
  */
 const BaseController = require('../handle/base-controller');
 const MobilePhoneService = require('../service/mobile-phone');
@@ -73,6 +73,28 @@ class MobilePhoneController extends BaseController {
    *       name: "model_name"
    *       type: "string"
    *       description: "手机型号"
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+  /**
+   * @swagger
+   * /api/mobile-phone/findall:
+   *   head:
+   *     summary: 查找 Method HEAD
+   *     description: 查找 HEAD
+   *     tags: [MobilePhone]
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+  /**
+   * @swagger
+   * /api/mobile-phone/findall:
+   *   options:
+   *     summary: 查找 Method OPTIONS
+   *     description: 查找 OPTIONS
+   *     tags: [MobilePhone]
    *     responses:
    *       '200':
    *         description: OK
