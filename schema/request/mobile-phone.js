@@ -1,8 +1,8 @@
 /*
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 22:44:47
- * @Last Modified by:   zhixiong.fu
- * @Last Modified time: 2021-01-07 22:44:47
+ * @Last Modified by: zhixiong.fu
+ * @Last Modified time: 2021-10-02 17:23:37
  */
 'use strict';
 
@@ -87,6 +87,27 @@
  *         example: "00010"
  *     xml:
  *       name: "MobilePhoneUpd"
+ */
+
+/**
+ * @swagger
+ * definitions:
+ *   MobilePhoneUpdPatch:
+ *     type: "object"
+ *     required:
+ *     - "_id"
+ *     - "model_name"
+ *     properties:
+ *       _id:
+ *         type: "string"
+ *         description: "id"
+ *         example: "xx"
+ *       model_name:
+ *         type: "string"
+ *         description: "手机型号"
+ *         example: "xx"
+ *     xml:
+ *       name: "MobilePhoneUpdPatch"
  */
 
 /**

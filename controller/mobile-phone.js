@@ -2,7 +2,7 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-01-13 16:17:14
+ * @Last Modified time: 2021-10-03 00:43:10
  */
 const BaseController = require('../handle/base-controller');
 const MobilePhoneService = require('../service/mobile-phone');
@@ -10,14 +10,40 @@ const MobilePhoneService = require('../service/mobile-phone');
 class MobilePhoneController extends BaseController {
   /**
    * @swagger
-   * /api/mobile-phone/findone:
+   * /:
+   *   options:
+   *     summary: Method OPTIONS
+   *     description: OPTIONS
+   *     tags: [Home]
+   *     deprecated: false
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+
+  /**
+   * @swagger
+   * /:
+   *   head:
+   *     summary: Method HEAD
+   *     description: HEAD
+   *     tags: [Home]
+   *     deprecated: false
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+
+  /**
+   * @swagger
+   * /api/mobile-phone/findone/{_id}:
    *   get:
    *     summary: id查找
    *     description: id查找
    *     tags: [MobilePhone]
    *     deprecated: false
    *     parameters:
-   *     - in: "query"
+   *     - in: "path"
    *       name: "_id"
    *       type: "string"
    *       required: true
@@ -27,8 +53,8 @@ class MobilePhoneController extends BaseController {
    *         description: OK
    */
   async findOne(ctx, next) {
-    console.log('controller : ' + JSON.stringify(ctx.query._id));
-    ctx.body = await MobilePhoneService.findOne({ _id: ctx.query._id });
+    console.log('controller:' + JSON.stringify(ctx.params));
+    ctx.body = await MobilePhoneService.findOne({ _id: ctx.params._id });
   }
 
   /**
@@ -51,7 +77,30 @@ class MobilePhoneController extends BaseController {
    *       '200':
    *         description: OK
    */
+  /**
+   * @swagger
+   * /api/mobile-phone/findall:
+   *   head:
+   *     summary: 查找 Method HEAD
+   *     description: 查找 HEAD
+   *     tags: [MobilePhone]
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+  /**
+   * @swagger
+   * /api/mobile-phone/findall:
+   *   options:
+   *     summary: 查找 Method OPTIONS
+   *     description: 查找 OPTIONS
+   *     tags: [MobilePhone]
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
   async findall(ctx, next) {
+    console.log('controller:' + JSON.stringify(ctx.query));
     ctx.body = await MobilePhoneService.find({
       _id: ctx.query._id,
       model_name: ctx.query.model_name
@@ -100,6 +149,29 @@ class MobilePhoneController extends BaseController {
    *         description: OK
    */
   async update(ctx, next) {
+    console.log('controller : ' + JSON.stringify(ctx.request.body));
+    ctx.body = await MobilePhoneService.update(ctx.request.body);
+  }
+
+  /**
+   * @swagger
+   * /api/mobile-phone/patch:
+   *   patch:
+   *     summary: 更新手机
+   *     description: 更新手机
+   *     tags: [MobilePhone]
+   *     parameters:
+   *     - in: "body"
+   *       name: "MobilePhoneUpdPatch"
+   *       description: "手机信息"
+   *       required: true
+   *       schema:
+   *         $ref: "#/definitions/MobilePhoneUpdPatch"
+   *     responses:
+   *       '200':
+   *         description: OK
+   */
+  async updateByPatch(ctx, next) {
     console.log('controller : ' + JSON.stringify(ctx.request.body));
     ctx.body = await MobilePhoneService.update(ctx.request.body);
   }
