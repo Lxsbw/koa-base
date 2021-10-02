@@ -2,7 +2,7 @@
  * @Author: zhixiong.fu
  * @Date: 2020-12-22 12:00:52
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-01-07 17:25:22
+ * @Last Modified time: 2021-10-02 17:29:53
  */
 const BaseService = require('../handle/base-service');
 const mobilePhoneModel = require('../models/mobile-phone').mobilePhone;
@@ -12,19 +12,15 @@ class MobilePhoneService extends BaseService {
    * 查找一个
    */
   async findOne(param) {
-    console.log('service : ' + JSON.stringify(param));
-
     const result = mobilePhoneModel
       .findOne({ _id: param._id })
       .exec()
-      .then((data) => {
+      .then(data => {
         return data;
       })
-      .catch((err) => {
+      .catch(err => {
         return { state: 'Fail', mess: err };
       });
-
-    console.log('service result: ' + result);
 
     return result;
   }
@@ -33,8 +29,6 @@ class MobilePhoneService extends BaseService {
    * 查找
    */
   async find(param) {
-    console.log('service : ' + JSON.stringify(param));
-
     let conditions = {};
     if (param._id) {
       conditions = { ...conditions, _id: param._id };
@@ -44,8 +38,6 @@ class MobilePhoneService extends BaseService {
     }
 
     const result = await mobilePhoneModel.find(conditions);
-
-    console.log('service result: ' + result);
 
     return result;
   }
@@ -92,10 +84,10 @@ class MobilePhoneService extends BaseService {
 
     const result = await mobilePhoneModel
       .updateOne({ _id: param._id }, conditions)
-      .then((data) => {
+      .then(data => {
         return { ...data, state: 'Success' };
       })
-      .catch((err) => {
+      .catch(err => {
         return { state: 'Fail', mess: err };
       });
 
@@ -112,10 +104,10 @@ class MobilePhoneService extends BaseService {
 
     const result = await mobilePhoneModel
       .deleteOne({ _id: param._id })
-      .then((data) => {
+      .then(data => {
         return { ...data, state: 'Success' };
       })
-      .catch((err) => {
+      .catch(err => {
         return { state: 'Fail', mess: err };
       });
 
