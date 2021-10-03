@@ -3,9 +3,10 @@
   "version": "0.0.1",
   "description": "Node.js & Koa2 & MVC & mongoose & swagger",
   "private": true,
+  "type": "module",
   "scripts": {
     "start": "node bin/www",
-    "dev": "./node_modules/.bin/nodemon bin/www",
+    "dev": "./node_modules/.bin/nodemon bin/www.js",
     "prd": "pm2 start bin/www --name=koa-base",
     "stop": "pm2 stop koa-base && pm2 delete koa-base",
     "test": "echo \"Error: no test specified\" && exit 1",

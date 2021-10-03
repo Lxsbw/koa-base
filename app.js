@@ -1,15 +1,15 @@
-const Koa = require('koa');
+import Koa from 'koa';
 const app = new Koa();
-const views = require('koa-views');
-const json = require('koa-json');
-const onerror = require('koa-onerror');
-const bodyparser = require('koa-bodyparser');
-const logger = require('koa-logger');
-const swagger = require('./config/swagger');
-const koaSwagger = require('koa2-swagger-ui');
+import * as views from 'koa-views';
+import json from 'koa-json';
+import onerror from 'koa-onerror';
+import bodyparser from 'koa-bodyparser';
+import logger from 'koa-logger';
+import swagger from './config/swagger.js';
+import koaSwagger from 'koa2-swagger-ui';
 
-const index = require('./routes/index');
-const users = require('./routes/users');
+import index from './routes/index.js';
+import users from './routes/users.js';
 
 // error handler
 onerror(app);
@@ -22,13 +22,13 @@ app.use(
 );
 app.use(json());
 app.use(logger());
-app.use(require('koa-static')(__dirname + '/public'));
+// app.use(require('koa-static')(__dirname + '/public'));
 
-app.use(
-  views(__dirname + '/views', {
-    extension: 'pug'
-  })
-);
+// app.use(
+//   views(__dirname + '/views', {
+//     extension: 'pug'
+//   })
+// );
 
 // logger
 app.use(async (ctx, next) => {
@@ -59,4 +59,5 @@ app.on('error', (err, ctx) => {
   console.error('server error', err, ctx);
 });
 
-module.exports = app;
+// module.exports = app;
+export default app;

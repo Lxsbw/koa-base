@@ -2,10 +2,10 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-10-03 00:43:10
+ * @Last Modified time: 2021-10-03 10:53:26
  */
-const BaseController = require('../handle/base-controller');
-const MobilePhoneService = require('../service/mobile-phone');
+import BaseController from '../handle/base-controller.js';
+import MobilePhoneService from '../service/mobile-phone.js';
 
 class MobilePhoneController extends BaseController {
   /**
@@ -200,4 +200,5 @@ class MobilePhoneController extends BaseController {
   }
 }
 
-module.exports = new MobilePhoneController();
+// module.exports = new MobilePhoneController();
+export default new MobilePhoneController();

@@ -1,5 +1,6 @@
-const router = require('koa-router')();
-const MobilePhone = require('../controller/mobile-phone');
+import KoaRouter from 'koa-router';
+const router = new KoaRouter();
+import MobilePhone from '../controller/mobile-phone.js';
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {
@@ -25,4 +26,5 @@ router.put('/api/mobile-phone/update', MobilePhone.update);
 router.patch('/api/mobile-phone/patch', MobilePhone.updateByPatch);
 router.delete('/api/mobile-phone/delete', MobilePhone.delete);
 
-module.exports = router;
+// module.exports = router;
+export default router;

@@ -1,6 +1,7 @@
-const router = require('koa-router')(); // 引入路由函数
-const path = require('path');
-const swaggerJSDoc = require('swagger-jsdoc');
+import KoaRouter from 'koa-router';
+const router = new KoaRouter();
+import path from 'path';
+import swaggerJSDoc from 'swagger-jsdoc';
 
 const swaggerDefinition = {
   info: {
@@ -48,10 +49,11 @@ const options = {
 };
 const swaggerSpec = swaggerJSDoc(options);
 // 通过路由获取生成的注解文件
-router.get('/swagger.json', async (ctx) => {
+router.get('/swagger.json', async ctx => {
   ctx.set('Content-Type', 'application/json');
   ctx.body = swaggerSpec;
 });
 
-module.exports = router;
+// module.exports = router;
 // 将页面暴露出去
+export default router;

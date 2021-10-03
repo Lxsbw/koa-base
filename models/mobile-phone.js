@@ -2,13 +2,13 @@
  * @Author: zhixiong.fu
  * @Date: 2020-12-22 12:09:21
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-01-07 17:27:10
+ * @Last Modified time: 2021-10-03 10:55:52
  */
 
-let { Schema } = require('mongoose');
-let { mongoClient } = require('../handle/mongo');
+import mongoose from 'mongoose';
+import { mongoClient } from '../handle/mongo.js';
 
-const mobilePhoneSchema = new Schema(
+const mobilePhoneSchema = new mongoose.Schema(
   {
     model_name: { type: String },
     size: { type: String },
@@ -27,10 +27,7 @@ const mobilePhoneSchema = new Schema(
 );
 
 console.log('实体类mobilePhone', new Date().getTime());
-let mobilePhone = mongoClient.model(
-  'mobilePhone',
-  mobilePhoneSchema,
-  'mobile-phone'
-);
+let mobilePhone = mongoClient.model('mobilePhone', mobilePhoneSchema, 'mobile-phone');
 
-module.exports = { mobilePhone };
+// module.exports = { mobilePhone };
+export default mobilePhone;
