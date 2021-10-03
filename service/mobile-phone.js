@@ -2,13 +2,10 @@
  * @Author: zhixiong.fu
  * @Date: 2020-12-22 12:00:52
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-10-03 10:39:03
+ * @Last Modified time: 2021-10-03 14:08:02
  */
-// const BaseService = require('../handle/base-service');
 import BaseService from '../handle/base-service.js';
-// const mobilePhoneModel = require('../models/mobile-phone').mobilePhone;
-import mobilePhone from '../models/mobile-phone.js';
-const mobilePhoneModel = mobilePhone;
+import mobilePhoneModel from '../models/mobile-phone.js';
 
 class MobilePhoneService extends BaseService {
   /**
