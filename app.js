@@ -1,15 +1,20 @@
 import Koa from 'koa';
-const app = new Koa();
-import * as views from 'koa-views';
+import views from 'koa-views';
 import json from 'koa-json';
 import onerror from 'koa-onerror';
 import bodyparser from 'koa-bodyparser';
 import logger from 'koa-logger';
-import swagger from './config/swagger.js';
+import koastatic from 'koa-static';
 import koaSwagger from 'koa2-swagger-ui';
 
+import path from 'path';
+
+import swagger from './config/swagger.js';
 import index from './routes/index.js';
 import users from './routes/users.js';
+
+const app = new Koa();
+const __dirname = path.resolve();
 
 // error handler
 onerror(app);
@@ -22,13 +27,13 @@ app.use(
 );
 app.use(json());
 app.use(logger());
-// app.use(require('koa-static')(__dirname + '/public'));
+app.use(koastatic(__dirname + '/public'));
 
-// app.use(
-//   views(__dirname + '/views', {
-//     extension: 'pug'
-//   })
-// );
+app.use(
+  views(__dirname + '/views', {
+    extension: 'pug'
+  })
+);
 
 // logger
 app.use(async (ctx, next) => {

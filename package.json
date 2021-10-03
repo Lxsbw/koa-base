@@ -5,9 +5,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "start": "node bin/www",
+    "start": "node bin/www.js",
     "dev": "./node_modules/.bin/nodemon bin/www.js",
-    "prd": "pm2 start bin/www --name=koa-base",
+    "prd": "pm2 start bin/www.js --name=koa-base",
     "stop": "pm2 stop koa-base && pm2 delete koa-base",
     "test": "echo \"Error: no test specified\" && exit 1",
     "del": "rimraf node_modules dist yarn.lock"
@@ -24,7 +24,7 @@
     "koa-static": "~5.0.0",
     "koa-views": "~6.2.0",
     "koa2-swagger-ui": "~5.0.5",
-    "mongoose": "~5.11.10",
+    "mongoose": "5.11.15",
     "pug": "~2.0.3",
     "rimraf": "~3.0.2",
     "swagger-jsdoc": "~6.0.1"
