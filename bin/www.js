@@ -5,7 +5,7 @@
  */
 
 // var app = require('../app');
-import app from '../app.js';
+import app from '../app';
 import debugSetting from 'debug';
 import http from 'http';
 

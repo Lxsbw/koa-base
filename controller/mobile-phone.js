@@ -2,10 +2,10 @@
  * @Author: zhixiong.fu
  * @Date: 2021-01-07 17:23:51
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-10-03 10:53:26
+ * @Last Modified time: 2021-10-08 21:53:01
  */
-import BaseController from '../handle/base-controller.js';
-import MobilePhoneService from '../service/mobile-phone.js';
+import BaseController from '../handle/base-controller';
+import MobilePhoneService from '../service/mobile-phone';
 
 class MobilePhoneController extends BaseController {
   /**
