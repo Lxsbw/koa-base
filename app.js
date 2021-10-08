@@ -9,9 +9,9 @@ import koaSwagger from 'koa2-swagger-ui';
 
 import path from 'path';
 
-import swagger from './config/swagger.js';
-import index from './routes/index.js';
-import users from './routes/users.js';
+import swagger from './config/swagger';
+import index from './routes/index';
+import users from './routes/users';
 
 const app = new Koa();
 const __dirname = path.resolve();
