@@ -26,5 +26,4 @@ router.put('/api/mobile-phone/update', MobilePhone.update);
 router.patch('/api/mobile-phone/patch', MobilePhone.updateByPatch);
 router.delete('/api/mobile-phone/delete', MobilePhone.delete);
 
-// module.exports = router;
 export default router;

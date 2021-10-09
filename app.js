@@ -6,7 +6,6 @@ import bodyparser from 'koa-bodyparser';
 import logger from 'koa-logger';
 import koastatic from 'koa-static';
 import koaSwagger from 'koa2-swagger-ui';
-
 import path from 'path';
 
 import swagger from './config/swagger';
@@ -64,5 +63,4 @@ app.on('error', (err, ctx) => {
   console.error('server error', err, ctx);
 });
 
-// module.exports = app;
 export default app;

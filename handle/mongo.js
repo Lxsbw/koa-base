@@ -73,9 +73,4 @@ function close() {
   mongoClient.close();
 }
 
-// module.exports = {
-//   mongoClient: mongoClient,
-//   close: close
-// };
-
 export { mongoClient, close };

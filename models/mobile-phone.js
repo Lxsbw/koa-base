@@ -2,7 +2,7 @@
  * @Author: zhixiong.fu
  * @Date: 2020-12-22 12:09:21
  * @Last Modified by: zhixiong.fu
- * @Last Modified time: 2021-10-08 22:04:32
+ * @Last Modified time: 2021-10-09 17:15:23
  */
 
 import mongoose from 'mongoose';
@@ -29,5 +29,4 @@ const mobilePhoneSchema = new mongoose.Schema(
 console.log('实体类mobilePhone', new Date().getTime());
 const mobilePhone = mongoClient.model('mobilePhone', mobilePhoneSchema, 'mobile-phone');
 
-// module.exports = { mobilePhone };
 export default mobilePhone;

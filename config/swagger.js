@@ -54,6 +54,4 @@ router.get('/swagger.json', async ctx => {
   ctx.body = swaggerSpec;
 });
 
-// module.exports = router;
-// 将页面暴露出去
 export default router;
