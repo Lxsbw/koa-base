@@ -1,6 +1,6 @@
 import KoaRouter from 'koa-router';
 const router = new KoaRouter();
-import MobilePhone from '../controller/mobile-phone';
+import MobilePhone from '../controller/mobile-phone.js';
 
 router.get('/', async (ctx, next) => {
   await ctx.render('index', {

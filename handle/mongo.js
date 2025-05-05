@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { mongodbConfig, env } from '../config/config.default';
+import { mongodbConfig, env } from '../config/config.default.js';
 
 /**
  * 使用 Node 自带 Promise 代替 mongoose 的 Promise,否则会报错
@@ -11,11 +11,11 @@ import { mongodbConfig, env } from '../config/config.default';
  */
 function getMongodbConfig() {
   let options = {
-    useCreateIndex: true,
-    poolSize: 5, // 连接池中维护的连接数
-    useNewUrlParser: true,
+    // useCreateIndex: true,
+    maxPoolSize: 5, // 连接池中维护的连接数
+    // useNewUrlParser: true,
     autoIndex: false,
-    useUnifiedTopology: true
+    // useUnifiedTopology: true
     // keepAlive: 120,
   };
   return options;
